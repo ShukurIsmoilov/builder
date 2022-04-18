@@ -54,35 +54,36 @@ function readCommand() {
         inputsArray[1].classList.remove("correct-command");
         inputsArray[1].classList.add("wrong-command");
     }
-    if (commandsArray[2] !== "make('chimney');") {
-        isAlgorithmCorrect = false;
-        inputsArray[2].classList.remove("correct-command");
-        inputsArray[2].classList.add("wrong-command");
-    } else {
-        inputsArray[2].classList.remove("wrong-command");
-        inputsArray[2].classList.add("correct-command");
-    }
-    if (reRoof.test(commandsArray[3])) {
-        const foundColor = commandsArray[3].match(reRoof);
+    if (reRoof.test(commandsArray[2])) {
+        const foundColor = commandsArray[2].match(reRoof);
         if (foundColor[1] === "red"
             || foundColor[1] === "green"
             || foundColor[1] === "yellow"
             || foundColor[1] === "blue"
             || foundColor[1] === "orange"
             || foundColor[1] === "brown") {
-            inputsArray[3].classList.remove("wrong-command");
-            inputsArray[3].classList.add("correct-command");
+            inputsArray[2].classList.remove("wrong-command");
+            inputsArray[2].classList.add("correct-command");
             roofColor = foundColor[1];
         } else {
             isAlgorithmCorrect = false;
-            inputsArray[3].classList.remove("correct-command");
-            inputsArray[3].classList.add("wrong-command");
+            inputsArray[2].classList.remove("correct-command");
+            inputsArray[2].classList.add("wrong-command");
         }
     } else {
         isAlgorithmCorrect = false;
+        inputsArray[2].classList.remove("correct-command");
+        inputsArray[2].classList.add("wrong-command");
+    }
+    if (commandsArray[3] !== "make('chimney');") {
+        isAlgorithmCorrect = false;
         inputsArray[3].classList.remove("correct-command");
         inputsArray[3].classList.add("wrong-command");
+    } else {
+        inputsArray[3].classList.remove("wrong-command");
+        inputsArray[3].classList.add("correct-command");
     }
+    
     if (commandsArray[4] !== "make('window');") {
         isAlgorithmCorrect = false;
         inputsArray[4].classList.remove("correct-command");
